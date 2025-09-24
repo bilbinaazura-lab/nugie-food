@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sarden Nugie - Rumah Anugerah</title>
+  <style>
+    /* RESET */
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fff5f5;
+      scroll-behavior: smooth;
+    }
+
+    /* HEADER */
+    header {
+      background: linear-gradient(135deg, #e74c3c, #c0392b);
+      color: white;
+      padding: 20px 40px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    header h1 {font-size: 2.5rem;}
+    header p {margin-top: 5px; font-size: 1.2rem;}
+
+    /* NAVBAR */
+    nav {
+      background-color: #c0392b;
+      padding: 12px;
+      text-align: center;
+      position: sticky;
+      top: 0; z-index: 1000;
+    }
+    nav a {
+      color: white; margin: 0 15px; text-decoration: none;
+      font-weight: bold; transition: color 0.3s;
+    }
+    nav a:hover {color: #ffdcdc;}
+
+    /* HERO */
+    .hero {
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      padding: 80px 20px;
+      background: url('hero-bg.jpeg') no-repeat center/cover;
+      text-align: center; color: #fff;
+    }
+    .hero h2 {
+    color: #e74c3c; /* merah biar sesuai tombol */
+    background: none; /* hapus abu-abu */
+    }
+    .hero p {
+        color: black;  /* ganti jadi hitam */
+        background: none; /* hapus abu-abu */
+    }
+    .hero .btn-pesan {
+      padding: 15px 30px; background-color: #e74c3c; color: white;
+      font-size: 1.2rem; border-radius: 8px; text-decoration: none;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .hero .btn-pesan:hover {background-color: #c0392b; transform: scale(1.05);}
+
+    /* SECTION UMUM */
+    section {padding: 60px 20px;}
+    h2 {text-align: center; margin-bottom: 25px; color: #e74c3c;}
+
+    /* ABOUT */
+    .about {
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
+      background-color: #fff; gap: 30px;
+    }
+    .about-text {flex: 1; min-width: 280px; font-size: 1.1rem; line-height: 1.6;}
+    .about-image {flex: 1; min-width: 250px; text-align: center;}
+    .about-image img {
+      max-width: 350px; border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+    .about-image img:hover {transform: scale(1.05);}
+
+    /* GALERI */
+    .galeri {background-color: #ffeaea;}
+    .galeri-container {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px; max-width: 1000px; margin: 0 auto;
+    }
+    .galeri-container img {
+      width: 100%; border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .galeri-container img:hover {transform: scale(1.05); box-shadow: 0 6px 14px rgba(0,0,0,0.3);}
+
+    /* TESTIMONI */
+    .testimoni-container {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;
+    }
+    .testimoni-card {
+      background: #ffeaea; border-radius: 10px; padding: 20px;
+      max-width: 280px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .testimoni-card:hover {transform: translateY(-5px);}
+    .testimoni-card p {font-style: italic; margin-bottom: 15px;}
+    .testimoni-card h4 {margin: 0; color: #e74c3c;}
+
+    /* KOMPOSISI */
+    .komposisi {
+      background: linear-gradient(135deg, #fff, #ffeaea);
+    }
+    .komposisi h2 {margin-bottom: 40px;}
+    .komposisi-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px; max-width: 900px; margin: 0 auto;
+    }
+    .komposisi-card {
+      background: #fff; border-radius: 12px;
+      padding: 20px; text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .komposisi-card:hover {transform: translateY(-5px);}
+    .komposisi-card h4 {
+      margin-bottom: 10px; color: #e74c3c; font-size: 1.1rem;
+    }
+    .komposisi-card p {font-size: 0.95rem;}
+
+    /* CTA */
+    .cta {text-align: center; background: linear-gradient(135deg, #ffeaea, #fff);}
+    .btn-pesan {
+      display: inline-block; margin-top: 20px; padding: 15px 25px;
+      background-color: #e74c3c; color: white;
+      font-size: 1.2rem; border-radius: 8px; text-decoration: none;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .btn-pesan:hover {background-color: #c0392b; transform: scale(1.05);}
+
+    /* FOOTER */
+    footer {
+      background-color: #e74c3c; color: white;
+      text-align: center; padding: 20px;
+    }
+    footer .socials a {
+      color: white; margin: 0 10px; font-size: 1.2rem;
+      text-decoration: none; transition: color 0.3s;
+    }
+    footer .socials a:hover {color: #ffdcdc;}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Rumah Anugerah</h1>
+    <p>Merek: Nugie Food - Sarden Lezat & Bergizi</p>
+  </header>
+
+  <nav>
+    <a href="#about">Tentang</a>
+    <a href="#galeri">Produk</a>
+    <a href="#testimoni">Testimoni</a>
+    <a href="#komposisi">Komposisi</a>
+    <a href="#pesan">Pesan</a>
+  </nav>
+
+<section class="hero">
+    <h2>Sarden Nugie</h2>
+    <p>
+        Nikmati kelezatan <b>Sarden Nugie</b>, dibuat dari ikan segar pilihan dengan bumbu rempah istimewa. 
+        Rasanya gurih, bergizi tinggi, dan sempurna disajikan untuk seluruh keluarga tercinta.
+    </p>
+   
+</section>
+
+
+  <section class="about" id="about">
+    <div class="about-text">
+      <h2>Tentang Nugie</h2>
+      <p>Sarden Nugie diproduksi oleh Rumah Anugerah dengan bahan baku ikan segar pilihan 
+      yang diolah menggunakan bumbu berkualitas. Dengan cita rasa autentik dan tekstur ikan yang lembut, 
+      Nugie menjadi pilihan tepat untuk makanan praktis, lezat, dan menyehatkan.</p>
+    </div>
+    <div class="about-image">
+      <img src="gambar-sarden.jpeg.jpeg" alt="Sarden Nugie Homemade">
+    </div>
+  </section>
+
+  <section class="galeri" id="galeri">
+    <h2>Produk Kami</h2>
+    <div class="galeri-container">
+      <img src="sarden-lagi.jpeg.jpeg" alt="Produk Sarden Nugie 1">
+      <img src="produk_sarden.jpeg.jpeg" alt="Produk Sarden Nugie 2">
+      <img src="sarden.jpeg.jpeg" alt="Produk Sarden Nugie 3">
+      <img src="is.jpeg.jpeg" alt="Produk Sarden Nugie 4">
+    </div>
+  </section>
+
+  <section class="testimoni" id="testimoni">
+    <h2>Apa Kata Mereka?</h2>
+    <div class="testimoni-container">
+      <div class="testimoni-card">
+        <p>"Allhamdulillah,kami punya baby umur 2 thn bisa menikmati sarden nugie yang tanpa pengawet"</p>
+        <h4>- Ibu Rina</h4>
+      </div>
+      <div class="testimoni-card">
+        <p>"Sarden praktis tapi tetap terasa seperti masakan rumahan. Favorit keluarga kami!"</p>
+        <h4>- Ranti</h4>
+      </div>
+      <div class="testimoni-card">
+        <p>"Harga terjangkau, bergizi, dan cocok dimakan kapan saja. Recommended!"</p>
+        <h4>- Naya</h4>
+      </div>
+    </div>
+  </section>
+
+  <section class="komposisi" id="komposisi">
+    <h2>Komposisi Sarden Nugie</h2>
+    <div class="komposisi-container">
+      <div class="komposisi-card"><h4>Ikan Sarden</h4><p>37,92%</p></div>
+      <div class="komposisi-card"><h4>Air</h4><p>Bersih & Higienis</p></div>
+      <div class="komposisi-card"><h4>Tomat</h4><p>Segar Alami</p></div>
+      <div class="komposisi-card"><h4>Bawang Bombay</h4><p>Aroma Khas</p></div>
+      <div class="komposisi-card"><h4>Saus Tiram</h4><p>dengan MSG & Kalium Sorbat</p></div>
+      <div class="komposisi-card"><h4>Minyak Goreng</h4><p>Minyak Berkualitas</p></div>
+      <div class="komposisi-card"><h4>Garam</h4><p>Secukupnya</p></div>
+      <div class="komposisi-card"><h4>Bawang Putih</h4><p>Aroma Gurih</p></div>
+      <div class="komposisi-card"><h4>Bawang Merah</h4><p>Rasa Manis Alami</p></div>
+      <div class="komposisi-card"><h4>Cabai Bubuk</h4><p>Sedikit Pedas</p></div>
+    </div>
+  </section>
+
+  <section class="cta" id="pesan">
+    <h2>Mau Coba Sarden Nugie?</h2>
+    <a href="https://wa.me/6285278153933?text=Halo%20saya%20mau%20pesan%20Sarden%20Nugie" class="btn-pesan" target="_blank">Pesan via WhatsApp</a>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Rumah Anugerah - Nugie Sarden. All rights reserved.</p>
+
+  </footer>
+</body>
+</html>
